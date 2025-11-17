@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.BMICalculatorPage"
+             Title="Vücut Kitle İndeksi">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+
+            <Label 
+                Text="VKİ Hesaplama"
+                FontSize="28"
+                HorizontalOptions="Center" />
+
+            <!-- Kilo Slider -->
+            <Label Text="Kilo (kg)" FontSize="16" />
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="WeightSlider" 
+                        Minimum="30" 
+                        Maximum="200" 
+                        Value="70" 
+                        ThumbColor="#FFD52020"
+                        MinimumTrackColor="#FFD52020"
+                        MaximumTrackColor="LightGray"
+                        ValueChanged="OnWeightOrHeightChanged" />
+                <Label x:Name="WeightValueLabel" 
+                       Text="70" 
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Boy Slider -->
+            <Label Text="Boy (cm)" FontSize="16" />
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="HeightSlider" 
+                        Minimum="100" 
+                        Maximum="220" 
+                        Value="170"
+                        ThumbColor="#FFD52020"
+                        MinimumTrackColor="#FFD52020"
+                        MaximumTrackColor="LightGray"
+                        ValueChanged="OnWeightOrHeightChanged" />
+                <Label x:Name="HeightValueLabel" 
+                       Text="170" 
+                       Grid.Column="1"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Sonuç Kartı -->
+            <Frame BorderColor="LightGray" Padding="15" Margin="0,20,0,0">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="VKİ Sonucu" FontSize="18" HorizontalOptions="Center" />
+
+                    <Label x:Name="BMIValueLabel" 
+                           Text="24.22" 
+                           FontSize="36" 
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="BMICategoryLabel" 
+                           Text="Normal Kilo" 
+                           FontSize="20"
+                           HorizontalOptions="Center" />
+
+                    <BoxView x:Name="BMIColorIndicator"
+                             Color="Green"
+                             HeightRequest="10"
+                             HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Aralık Tablosu -->
+            <Label Text="VKİ Değerlendirmesi:" FontSize="16" Margin="0,10,0,0" />
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="*,*">
+
+                <Label Text="16 altı" Grid.Row="0" />
+                <Label Text="İleri Düzeyde Zayıf" Grid.Row="0" Grid.Column="1" TextColor="DodgerBlue" />
+
+                <Label Text="16 - 16.99" Grid.Row="1" />
+                <Label Text="Orta Düzeyde Zayıf" Grid.Row="1" Grid.Column="1" TextColor="LightBlue" />
+
+                <Label Text="17 - 18.49" Grid.Row="2" />
+                <Label Text="Hafif Düzeyde Zayıf" Grid.Row="2" Grid.Column="1" TextColor="Cyan" />
+
+                <Label Text="18.5 - 24.99" Grid.Row="3" />
+                <Label Text="Normal" Grid.Row="3" Grid.Column="1" TextColor="Green" />
+
+                <Label Text="25 - 29.99" Grid.Row="4" />
+                <Label Text="Hafif Şişman / Fazla Kilolu" Grid.Row="4" Grid.Column="1" TextColor="Orange" />
+
+                <Label Text="30 - 34.99" Grid.Row="5" />
+                <Label Text="1. Derecede Obez" Grid.Row="5" Grid.Column="1" TextColor="OrangeRed" />
+
+                <Label Text="35 - 39.99" Grid.Row="6" />
+                <Label Text="2. Derecede Obez" Grid.Row="6" Grid.Column="1" TextColor="Red" />
+
+                <Label Text="40 ve üzeri" Grid.Row="7" />
+                <Label Text="3. Derecede Obez / Morbid Obez" Grid.Row="7" Grid.Column="1" TextColor="DarkRed" />
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

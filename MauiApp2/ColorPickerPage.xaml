@@ -13,7 +13,7 @@
                 FontSize="28"
                 HorizontalOptions="Center" />
 
-            <!-- Kırmızı -->
+            <!-- Kırmızı Slider -->
             <Label Text="Kırmızı (R)" FontSize="16" TextColor="#FFD52020" />
             <Grid ColumnDefinitions="*, 50">
                 <Slider x:Name="RedSlider" 
@@ -31,7 +31,7 @@
                        VerticalOptions="Center" />
             </Grid>
 
-            <!-- Yeşil -->
+            <!-- Yeşil Slider -->
             <Label Text="Yeşil (G)" FontSize="16" TextColor="Green" />
             <Grid ColumnDefinitions="*, 50">
                 <Slider x:Name="GreenSlider" 
@@ -49,7 +49,7 @@
                        VerticalOptions="Center" />
             </Grid>
 
-            <!-- Mavi -->
+            <!-- Mavi Slider -->
             <Label Text="Mavi (B)" FontSize="16" TextColor="Blue" />
             <Grid ColumnDefinitions="*, 50">
                 <Slider x:Name="BlueSlider" 

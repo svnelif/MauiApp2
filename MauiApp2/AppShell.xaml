@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:MauiApp2"
     FlyoutBehavior="Flyout">
 
-    <!-- 🔥 FLYOUT’TA SOLDA İKON, SAĞDA YAZI TEMPLATE -->
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10" ColumnDefinitions="40, *">

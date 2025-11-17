@@ -9,7 +9,7 @@ namespace MauiApp2
             InitializeComponent();
         }
 
-        // 🔹 ToolbarItem Clicked event'i buraya bağlı
+        // ToolbarItem Clicked event'i buraya bağlı
         private async void OnMenuClicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet(

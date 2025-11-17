@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="Ana Sayfa"
+             BackgroundColor="#FFF6F3F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+            <!-- Başlık iki satıra ayrıldı -->
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label 
+                    Text="BSM322 - Görsel Programlama"
+                    FontSize="28"
+                    TextColor="Black"
+                    HorizontalOptions="Center" />
+
+                <Label 
+                    Text="Ödev - 2"
+                    FontSize="28"
+                    TextColor="Black"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Frame HeightRequest="300"
+                   WidthRequest="260"
+                   BackgroundColor="Black"
+                   Padding="5"
+                   CornerRadius="0"
+                   HorizontalOptions="Center">
+
+                <Frame HeightRequest="290"
+                       WidthRequest="250"
+                       BackgroundColor="White"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       CornerRadius="0"
+                       BorderColor="Transparent">
+
+                    <Image Source="elif.jpeg"
+                           Aspect="AspectFill" />
+                </Frame>
+            </Frame>
+
+            <Label 
+                Text="Elif Ataseven"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="23"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="22010310015"
+                FontSize="19"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+                FontSize="17"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2"
+    FlyoutBehavior="Flyout">
+
+    <!-- 🔥 FLYOUT’TA SOLDA İKON, SAĞDA YAZI TEMPLATE -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10" ColumnDefinitions="40, *">
+                <Image Grid.Column="0"
+                       WidthRequest="28"
+                       HeightRequest="28"
+                       VerticalOptions="Center"
+                       Source="{Binding Icon}" />
+
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       TextColor="Black"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+
+    <FlyoutItem Title=" Ana Sayfa" Icon="anasayfa.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title=" Kredi Hesaplama" Icon="kredi.png">
+        <ShellContent ContentTemplate="{DataTemplate local:CreditCalculatorPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title=" VKİ Hesaplama" Icon="healty.png">
+        <ShellContent ContentTemplate="{DataTemplate local:BMICalculatorPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title=" Renk Seçici" Icon="color.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ColorPickerPage}" />
+    </FlyoutItem>
+
+</Shell>

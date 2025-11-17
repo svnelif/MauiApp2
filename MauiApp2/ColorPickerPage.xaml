@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.ColorPickerPage"
+             Title="Renk Seçici"
+             x:Name="colorPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+
+            <Label 
+                Text="Renk Seçici"
+                FontSize="28"
+                HorizontalOptions="Center" />
+
+            <!-- Kırmızı -->
+            <Label Text="Kırmızı (R)" FontSize="16" TextColor="#FFD52020" />
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="RedSlider" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        Value="100" 
+                        ValueChanged="OnColorChanged"
+                        ThumbColor="#FFD52020"
+                        MinimumTrackColor="#FFD52020"
+                        MaximumTrackColor="LightGray" />
+                <Label x:Name="RedValueLabel" 
+                       Text="100"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Yeşil -->
+            <Label Text="Yeşil (G)" FontSize="16" TextColor="Green" />
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="GreenSlider" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        Value="150" 
+                        ValueChanged="OnColorChanged"
+                        ThumbColor="Green"
+                        MinimumTrackColor="Green"
+                        MaximumTrackColor="LightGray" />
+                <Label x:Name="GreenValueLabel" 
+                       Text="150"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Mavi -->
+            <Label Text="Mavi (B)" FontSize="16" TextColor="Blue" />
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="BlueSlider" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        Value="200" 
+                        ValueChanged="OnColorChanged"
+                        ThumbColor="Blue"
+                        MinimumTrackColor="Blue"
+                        MaximumTrackColor="LightGray" />
+                <Label x:Name="BlueValueLabel" 
+                       Text="200"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Önizleme -->
+            <Frame BorderColor="LightGray" Padding="10" Margin="0,20,0,0">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Renk Önizleme" FontSize="18" HorizontalOptions="Center" />
+                    <Frame x:Name="ColorPreviewFrame" 
+                           HeightRequest="120" 
+                           BackgroundColor="#6496C8"
+                           CornerRadius="15"
+                           HasShadow="True" />
+                    <Label x:Name="ColorCodeLabel" 
+                           Text="#6496C8" 
+                           FontSize="20" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Butonlar -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                <Button 
+                    Text="Kopyala"
+                    Grid.Column="0"
+                    BackgroundColor="#FFD52020"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnCopyClicked" />
+
+                <Button 
+                    Text="Rastgele Renk"
+                    Grid.Column="1"
+                    BackgroundColor="#FFD52020"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnRandomClicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

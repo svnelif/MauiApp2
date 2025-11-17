@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.CreditCalculatorPage"
+             Title="Kredi Hesaplama">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+
+            <Label 
+                Text="Kredi Hesaplama"
+                TextColor="Black"
+                FontSize="28"
+                HorizontalOptions="Center" />
+
+            <!-- KREDİ TÜRÜ (Custom Picker) -->
+            <Label Text="Kredi Türü" FontSize="16" />
+
+            <Frame Padding="12"
+                   BackgroundColor="White"
+                   BorderColor="LightGray"
+                   CornerRadius="10">
+                <Grid>
+                    <Label x:Name="CreditTypeLabel"
+                           Text="Kredi Türünü Seçin"
+                           TextColor="Gray" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenCreditTypeMenu" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+
+            <Label Text="Kredi Tutarı (TL)" FontSize="16" />
+            <Entry x:Name="CreditAmountEntry" 
+                   Placeholder="Örn: 50000"
+                   Keyboard="Numeric" />
+
+            <Label Text="Yıllık Faiz Oranı (%)" FontSize="16" />
+            <Entry x:Name="InterestRateEntry" 
+                   Placeholder="Örn: 1.5"
+                   Keyboard="Numeric" />
+
+            <Label Text="Vade (Ay): " FontSize="16" />
+
+            <Grid ColumnDefinitions="*, 50">
+                <Slider x:Name="TermSlider" 
+                        Minimum="1"
+                        Maximum="120"
+                        Value="12"
+                        ValueChanged="OnTermSliderValueChanged"
+                        ThumbColor="#FFD52020"
+                        MinimumTrackColor="#FFD52020"
+                        MaximumTrackColor="LightGray" />
+
+                <Label x:Name="TermValueLabel" 
+                       Text="12"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+
+            <Button 
+                Text="Hesapla"
+                SemanticProperties.Hint="Kredi hesaplaması yapar"
+                HorizontalOptions="Center"
+                BackgroundColor="#FFD52020"
+                TextColor="White"
+                CornerRadius="12"
+                x:Name="CalculateButton"
+                Clicked="OnCalculateClicked" />
+
+            <Frame BorderColor="Gray"
+                   Padding="10"
+                   Margin="0,10,0,0"
+                   BackgroundColor="AliceBlue">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Hesaplama Sonucu" FontSize="18" HorizontalOptions="Center" />
+                    <Label x:Name="MonthlyPaymentLabel" Text="Aylık Ödeme: -" />
+                    <Label x:Name="TotalPaymentLabel" Text="Toplam Ödeme: -" />
+                    <Label x:Name="TotalInterestLabel" Text="Toplam Faiz: -" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
